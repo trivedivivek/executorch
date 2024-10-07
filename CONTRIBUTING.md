@@ -239,10 +239,10 @@ for basics.
      merged commit, so it needs to be useful in the output of `git log`.
      - Bad title: "Fix a bug"
      - Good title: "Add XYZ method to ABC"
-   - Give the PR a clear and thorough description. Don't just describe what the PR
+   - In the "Summary" section, clearly and thoroughly describe the intent of the PR. Don't just describe what the PR
      does: the diff will do that. Explain *why* you are making this change, in a
      way that will make sense to someone years from now.
-   - Explain how you have tested your changes by including repeatable instructions for
+   - In the "Test plan" section, explain how you have tested your changes by including repeatable instructions for
      testing the PR.
      - If you added tests, this can be as simple as the command you used to run the
        tests.
