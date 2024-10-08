@@ -254,7 +254,9 @@ for basics.
 	 where \<area\> describes which part of ExecuTorch the change pertains to, e.g.
 	 "Release notes: runtime". A few of these areas include  "runtime", "backends",
 	 and "build". If you aren't sure whether to add a release label, you should
-	 probably still add one since it immensely facilitates release management.
+	 probably still add one since it immensely facilitates release management. Please
+	 refer to [Release note categories](#release-note-categories) for a list of
+         standard release note categories.
    - See https://github.com/pytorch/executorch/pull/3612 for an example PR that
      follows this advice.
 1. Before asking for a review, ensure that all [CI (continuous integration)
@@ -282,6 +284,18 @@ for basics.
    - Note that if the `main` [CI](#continuous-integration) jobs are broken, we
      will only merge PRs that fix the broken jobs until all critical jobs are
      fixed.
+
+### Release note categories
+- `Release notes: runtime`: changes related to the core runtime which loads the program methods, initializes delegates, and runs the lowered graph.
+- `Release notes: exir`: changes to any internal representations, such as an edge-related dialects. Also any changes to passes that may modify the exir, such as memory planning.
+- `Release notes: quantization`: changes to quantization.
+- `Release notes: ops & kernels`: changes to the opset and any new / changed kernel implementations.
+- `Release notes: api`: changes to public facing apis (any interfaces, pybinded runtime methods, etc.).
+- `Release notes: backends`: changes to any of the backend delegates.
+- `Release notes: build`: changes related to the build system, including major dependency upgrades, notable build flags, optimizations, etc.
+- `Release notes: SDK`: changes to any of ExecuTorch's SDKs, for example the debugger & profiler.
+- `Release notes: examples`: changes to any of our example LLMs integrations, such as Llama3 and Llava.
+- `Release notes: misc`: anything notable that doesn't belong in the above categories.
 
 &nbsp;
 
