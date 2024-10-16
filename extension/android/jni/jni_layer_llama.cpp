@@ -119,9 +119,9 @@ class ExecuTorchLlamaJni
           temperature);
     } else if (model_type_category == MODEL_TYPE_MEDIATEK_LLAMA) {
       mtk_llama_runner_ = std::make_unique<MTKLlamaRunner>(
-        model_path->toStdString().c_str(),
-        tokenizer_path->toStdString().c_str(),
-        temperature);
+          model_path->toStdString().c_str(),
+          tokenizer_path->toStdString().c_str(),
+          temperature);
     }
   }
 
