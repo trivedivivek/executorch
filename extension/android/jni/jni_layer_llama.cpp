@@ -15,9 +15,9 @@
 #include <unordered_map>
 #include <vector>
 
+#include <executorch/examples/mediatek/executor_runner/mtk_llama_runner.h>
 #include <executorch/examples/models/llama2/runner/runner.h>
 #include <executorch/examples/models/llava/runner/llava_runner.h>
-#include <executorch/examples/mediatek/executor_runner/mtk_llama_runner.h>
 #include <executorch/extension/llm/runner/image.h>
 #include <executorch/runtime/platform/log.h>
 #include <executorch/runtime/platform/platform.h>
@@ -119,9 +119,9 @@ class ExecuTorchLlamaJni
           temperature);
     } else if (model_type_category == MODEL_TYPE_MEDIATEK_LLAMA) {
       mtk_llama_runner_ = std::make_unique<MTKLlamaRunner>(
-        model_path->toStdString().c_str(),
-        tokenizer_path->toStdString().c_str(),
-        temperature);
+          model_path->toStdString().c_str(),
+          tokenizer_path->toStdString().c_str(),
+          temperature);
     }
   }
 
